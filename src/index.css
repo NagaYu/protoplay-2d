@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: #0b0e16;
+    color: #e2e8f0;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* 共通スライダースタイル（ダークモード基調） */
+  .slider-input {
+    @apply h-2 w-full cursor-pointer appearance-none rounded-full outline-none;
+  }
+
+  .slider-input::-webkit-slider-thumb {
+    @apply h-4 w-4 appearance-none rounded-full border-2 border-white bg-accent transition-transform;
+    box-shadow: 0 0 8px rgba(91, 140, 255, 0.6);
+  }
+
+  .slider-input::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
+  .slider-input::-moz-range-thumb {
+    @apply h-4 w-4 cursor-pointer rounded-full border-2 border-white bg-accent;
+    box-shadow: 0 0 8px rgba(91, 140, 255, 0.6);
+  }
+}
+
+/* スクロールバーの軽いダーク化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2738;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3650;
+}
